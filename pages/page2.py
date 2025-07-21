@@ -57,4 +57,4 @@ if st.session_state.reveal:
         st.session_state.question_index = random.randint(0, len(authors)-1)
         st.session_state.options = []
         st.session_state.reveal = False
-        st.experimental_rerun()
+        st.rerun()
