@@ -34,7 +34,7 @@ if not st.session_state.options:
 # Display author image
 st.title("👀 Guess the Author!")
 image = Image.open(f"images/{correct_author['file']}")
-st.image(image, caption="Can you recognize this famous author?", use_column_width=True)
+st.image(image, caption="Can you recognize this famous author?", use_container_width=True)
 
 # Show choices
 names = [opt["name"] for opt in st.session_state.options]
