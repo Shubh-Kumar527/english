@@ -13,4 +13,4 @@ with col2:
     if st.button("📝 Go to Page One"):
         st.switch_page("pages/About_the_authers.py")
     if st.button("🎨 Go to Page Two"):
-        st.switch_page("pages/2_Page_Two.py")
+        st.switch_page("pages/page2.py")
