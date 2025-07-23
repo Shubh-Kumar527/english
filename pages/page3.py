@@ -20,6 +20,8 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+st.markdown("---")
+
 # Path to student work folder
 student_work_folder = "student_works"
 
