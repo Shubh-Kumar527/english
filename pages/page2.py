@@ -1,6 +1,27 @@
+
+
+
+
+
 import streamlit as st
 import random
 from PIL import Image
+import os
+
+# Set up the page
+st.set_page_config(
+    page_title="Guess the Author",
+    page_icon="👀",
+    layout="wide"
+)
+
+st.markdown(
+    "<div style='text-align: center; padding: 1rem; background-color: #f0f2f6; border-radius: 10px;'>"
+    "<h1 style='color: #333;'>👀 Guess the Author!</h1>"
+    "<p style='color: #555;'>Can you recognize this famous author by their photo?</p>"
+    "</div>",
+    unsafe_allow_html=True
+)
 
 # Author data
 authors = [
@@ -31,30 +52,48 @@ if not st.session_state.options:
     st.session_state.options = other_authors + [correct_author]
     random.shuffle(st.session_state.options)
 
-# Display author image
-st.title("👀 Guess the Author!")
-image = Image.open(f"images/{correct_author['file']}")
-st.image(image, caption="Can you recognize this famous author?", use_container_width=True)
+# Display author image in a styled box
+st.markdown("<br>", unsafe_allow_html=True)
+st.markdown(
+    "<div style='text-align: center;'>",
+    unsafe_allow_html=True
+)
+img_path = os.path.join("images", correct_author["file"])
+image = Image.open(img_path)
+st.image(image, width=300, caption="Can you recognize this famous author?")
+st.markdown("</div>", unsafe_allow_html=True)
 
 # Show choices
 names = [opt["name"] for opt in st.session_state.options]
+st.markdown("<br>", unsafe_allow_html=True)
 choice = st.radio("Choose the author's name:", names)
 
 # Submit button
-if st.button("Submit"):
+if st.button("🎯 Submit"):
     st.session_state.reveal = True
     if choice == correct_author["name"]:
-        st.success("✅ Correct!")
+        st.success("✅ Correct! Well done.")
     else:
-        st.error(f"❌ Wrong! The correct answer was **{correct_author['name']}**.")
+        st.error(f"❌ Oops! The correct answer was **{correct_author['name']}**.")
 
 # Show bio and Next button
 if st.session_state.reveal:
-    st.markdown("### 📚 About the Author")
+    st.markdown("---")
+    st.markdown(f"### 📚 About {correct_author['name']}")
     st.info(correct_author["bio"])
-    
-    if st.button("Next"):
+
+    if st.button("🔄 Next Question"):
         st.session_state.question_index = random.randint(0, len(authors)-1)
         st.session_state.options = []
         st.session_state.reveal = False
         st.rerun()
+
+# Footer
+st.markdown("---")
+st.markdown(
+    "<div style='text-align: center; color: #000;'>"
+    "&copy; 2025 English Exhibition. All rights reserved."
+    "</div>",
+    unsafe_allow_html=True
+)
+
