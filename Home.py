@@ -83,7 +83,7 @@ st.markdown(
 )
 
 # Load local image from user's system
-image_path = "home_page_collage.jpg"  # replace with your local path
+image_path = "images/home_page_collage.jpg"  # replace with your local path
 if os.path.exists(image_path):
     st.image(image_path, use_column_width=True)
 else:
