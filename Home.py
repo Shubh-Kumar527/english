@@ -38,6 +38,8 @@ with col2:
         st.switch_page("pages/About_the_authers.py")
     if st.button("🎨 Go to Page Two"):
         st.switch_page("pages/page2.py")
+    if st.button("🎨 Go to Page THree"):
+        st.switch_page("pages/page3.py")
 
 # Footer
 st.markdown("---")
