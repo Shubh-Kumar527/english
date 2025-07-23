@@ -85,6 +85,6 @@ st.markdown(
 # Load local image from user's system
 image_path = "images/home_page_collage.jpg"  # replace with your local path
 if os.path.exists(image_path):
-    st.image(image_path, use_column_width=True)
+    st.image(image_path, use_container_width=True)
 else:
     st.warning("Background image placeholder not found. Please place it at 'assets/main_visual.jpg'")
