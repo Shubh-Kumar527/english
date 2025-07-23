@@ -71,16 +71,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Placeholder for user-defined full-screen image (local)
-st.markdown(
-    """
-    <div style='text-align: center; padding-top: 2rem;'>
-        <h3 style='color: black;'>Your image will appear here</h3>
-        <p style='color: black;'>You can replace the placeholder below with your local image.</p>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+
 
 # Load local image from user's system
 image_path = "images/home_page_collage.jpg"  # replace with your local path
