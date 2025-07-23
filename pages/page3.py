@@ -27,21 +27,32 @@ student_work_folder = "student_works"
 if os.path.exists(student_work_folder):
     files = os.listdir(student_work_folder)
     if files:
-        for file in files:
-            name, ext = os.path.splitext(file)
-            file_path = os.path.join(student_work_folder, file)
+        image_files = [f for f in files if os.path.splitext(f)[1].lower() in [".png", ".jpg", ".jpeg"]]
+        text_files = [f for f in files if os.path.splitext(f)[1].lower() in [".txt", ".md"]]
 
+        # Show image files in grid
+        st.markdown("---")
+        st.subheader("🖼️ Artworks")
+        for i in range(0, len(image_files), 3):
+            row = image_files[i:i+3]
+            cols = st.columns(len(row))
+            for j, file in enumerate(row):
+                with cols[j]:
+                    name, _ = os.path.splitext(file)
+                    file_path = os.path.join(student_work_folder, file)
+                    img = Image.open(file_path)
+                    st.image(img, caption=name.replace('_', ' ').title(), width=250)
+
+        # Show text files
+        st.markdown("---")
+        st.subheader("✍️ Written Works")
+        for file in text_files:
+            name, _ = os.path.splitext(file)
+            file_path = os.path.join(student_work_folder, file)
             st.markdown("---")
             st.subheader(f"🧑‍🎓 {name.replace('_', ' ').title()}")
-
-            if ext.lower() in [".png", ".jpg", ".jpeg"]:
-                img = Image.open(file_path)
-                st.image(img, caption=name.replace('_', ' ').title(), width=400)
-            elif ext.lower() in [".txt", ".md"]:
-                with open(file_path, "r", encoding="utf-8") as f:
-                    st.markdown(f"<div style='background-color: #fefefe; padding: 1rem; border-radius: 8px; color: #000;'>{f.read()}</div>", unsafe_allow_html=True)
-            else:
-                st.info(f"File format for {file} not supported for preview.")
+            with open(file_path, "r", encoding="utf-8") as f:
+                st.markdown(f"<div style='background-color: #fefefe; padding: 1rem; border-radius: 8px; color: #000;'>{f.read()}</div>", unsafe_allow_html=True)
     else:
         st.info("No student submissions yet. Please check back soon!")
 else:
