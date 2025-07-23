@@ -13,7 +13,7 @@ st.set_page_config(
 
 
 # Header with logo and title (local image, black background)
-logo_path = "Logo.jpg"  # Replace with your local path
+logo_path = "images/Logo.jpg"  # Replace with your local path
 
 if os.path.exists(logo_path):
     with open(logo_path, "rb") as image_file:
