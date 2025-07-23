@@ -1,52 +1,90 @@
-
-
 import streamlit as st
+import os
+from PIL import Image
+import base64
 
-# Page configuration
+# Page config
 st.set_page_config(
-    page_title="English Exhibition",
-    page_icon="📚",
+    page_title="Lingualith",
+    page_icon="📘",
     layout="wide",
     initial_sidebar_state="collapsed"
 )
 
-# Hide Streamlit default menu and footer
-hide_streamlit_style = """
+
+# Header with logo and title (local image, black background)
+logo_path = "Logo.jpg"  # Replace with your local path
+
+if os.path.exists(logo_path):
+    with open(logo_path, "rb") as image_file:
+        encoded_logo = base64.b64encode(image_file.read()).decode()
+
+    st.markdown(
+        f"""
+        <div style='display: flex; align-items: center; justify-content: center; background-color: black; padding: 2rem 0; border-radius: 10px;'>
+            <img src='data:image/png;base64,{encoded_logo}' style='width: 60px; margin-right: 15px;'>
+            <h1 style='color: white; font-size: 3rem;'>Lingualith</h1>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+else:
+    st.error("Logo image not found. Please place it at 'assets/logo.png'")
+
+# Navigation bar
+st.markdown(
+    """
     <style>
-    #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
+    .nav-bar {
+        background-color: #f0f0f0;
+        padding: 1rem;
+        border-radius: 12px;
+        text-align: center;
+    }
+    .nav-bar a {
+        color: #333;
+        margin: 0 1.5rem;
+        font-size: 1.2rem;
+        text-decoration: none;
+    }
+    .nav-bar a:hover {
+        text-decoration: underline;
+    }
     </style>
-"""
-st.markdown(hide_streamlit_style, unsafe_allow_html=True)
-
-# Main header
-st.markdown(
-    "<div style='text-align: center; padding: 1rem; background-color: #f0f2f6; border-radius: 10px;'>"
-    "<h1 style='color: #333;'>🏫 English Exhibition</h1>"
-    "<p style='color: #666; font-size: 1.1rem;'>Welcome to our project!</p>"
-    "</div>",
+    <div class='nav-bar'>
+        <a href='/Home'>Home</a>
+        <a href='/pages/About_the_authers.py'>Meet the Authors</a>
+        <a href='/pages/page2.py'>Student Creations</a>
+    </div>
+    """,
     unsafe_allow_html=True
 )
 
-st.markdown("---")
-st.write("Explore the world of English through our exhibition.")
 
-# Navigation buttons
-col1, col2, col3 = st.columns([1, 2, 1])
-with col2:
-    if st.button("📝 Go to Page One"):
-        st.switch_page("pages/About_the_authers.py")
-    if st.button("🎨 Go to Page Two"):
-        st.switch_page("pages/page2.py")
-    if st.button("🎨 Go to Page THree"):
-        st.switch_page("pages/page3.py")
-
-# Footer
-st.markdown("---")
 st.markdown(
-    "<div style='text-align: center; color: #999;'>"
-    "&copy; 2025 English Exhibition. All rights reserved."
-    "</div>",
+    f"""
+    <div style='text-align: center; padding: 2rem;'>
+        <h2 style='color: white; font-style: italic;'>“TO BE OR NOT TO BE , THAT IS THE QUESTION”</h2>
+        <h2 style='color: white; font-style: italic;'>\t-WILLIAM SHAKESPEARE </h2>
+    </div>
+    """,
     unsafe_allow_html=True
 )
 
+# Placeholder for user-defined full-screen image (local)
+st.markdown(
+    """
+    <div style='text-align: center; padding-top: 2rem;'>
+        <h3 style='color: black;'>Your image will appear here</h3>
+        <p style='color: black;'>You can replace the placeholder below with your local image.</p>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+# Load local image from user's system
+image_path = "home_page_collage.jpg"  # replace with your local path
+if os.path.exists(image_path):
+    st.image(image_path, use_column_width=True)
+else:
+    st.warning("Background image placeholder not found. Please place it at 'assets/main_visual.jpg'")
