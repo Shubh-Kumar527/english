@@ -39,7 +39,6 @@ st.set_page_config(layout="wide")
 
 # Navigation menu dictionary
 menu = {
-    "Home": "home",
     "About Authors": "pages/About_the_authers.py",
     "Students Creation": "students creation",
     "School Magazine": "chf",
@@ -62,14 +61,13 @@ for i, (label, path) in enumerate(menu.items()):
 st.markdown("---")
 
 # Content logic based on selected path
-if selected_path == "home":
-    st.header("🏠 Welcome to the Home Page")
-elif selected_path == "gallery":
-    st.header("🖼️ Gallery of Student Creations")
+
+if selected_path == "gallery":
+    st.switch_page(menu['About Authors'])
 elif selected_path == "about-us":
-    st.header("ℹ️ About Us")
+    pass
 elif selected_path == "contact-page":
-    st.header("📞 Contact Page")
+    pass
 
 
 
