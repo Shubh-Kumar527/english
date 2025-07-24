@@ -38,9 +38,11 @@ st.set_page_config(layout="wide")
 # Navigation menu dictionary
 menu = {
     "Home": "home",
-    "Gallery": "gallery",
-    "About Us": "about-us",
-    "Contact Page": "contact-page"
+    "About Authors": "authors",
+    "Students Creation": "students creation",
+    "School Magazine": "chf",
+    "Game": "yigj",
+    "About Us": "about-us"
 }
 
 # Create columns for nav buttons
