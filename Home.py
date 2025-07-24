@@ -32,33 +32,39 @@ else:
     st.error("Logo image not found. Please place it at 'assets/logo.png'")
 
 # Navigation bar
-st.markdown(
-    """
-    <style>
-    .nav-bar {
-        background-color: #f0f0f0;
-        padding: 1rem;
-        border-radius: 12px;
-        text-align: center;
-    }
-    .nav-bar a {
-        color: #333;
-        margin: 0 1.5rem;
-        font-size: 1.2rem;
-        text-decoration: none;
-    }
-    .nav-bar a:hover {
-        text-decoration: underline;
-    }
-    </style>
-    <div class='nav-bar'>
-        <a href='/Home'>Home</a>
-        <a href='/pages/About_the_authers.py'>Meet the Authors</a>
-        <a href='/pages/page2.py'>Student Creations</a>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+# Set wide layout
+st.set_page_config(layout="wide")
+
+# Define menu with labels and internal keys (cleaned of special characters)
+menu = {
+    "Home": "home",
+    "Gallery": "gallery",
+    "About Us": "aboutus",
+    "Contact Page": "contactpage"
+}
+
+# Create columns for buttons
+cols = st.columns(len(menu))
+
+# Track selected page key
+selected_page = None
+
+# Render nav buttons
+for i, (label, page_key) in enumerate(menu.items()):
+    if cols[i].button(label):
+        selected_page = page_key
+
+# Content based on selected page key
+st.markdown("---")
+if selected_page == "home":
+    st.header("Welcome to the Home Page")
+elif selected_page == "gallery":
+    st.header("Gallery of Student Creations")
+elif selected_page == "aboutus":
+    st.header("About Us")
+elif selected_page == "contactpage":
+    st.header("Contact Page")
+
 
 
 st.markdown(
