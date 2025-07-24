@@ -35,36 +35,39 @@ else:
 # Set wide layout
 st.set_page_config(layout="wide")
 
-# Define menu with labels and internal keys (cleaned of special characters)
+# Navigation menu dictionary
 menu = {
     "Home": "home",
     "Gallery": "gallery",
-    "About Us": "aboutus",
-    "Contact Page": "contactpage"
+    "About Us": "about-us",
+    "Contact Page": "contact-page"
 }
 
-# Create columns for buttons
+# Create columns for nav buttons
 cols = st.columns(len(menu))
 
-# Track selected page key
-selected_page = None
+# Track selected path
+selected_path = None
 
-# Render nav buttons
-for i, (label, page_key) in enumerate(menu.items()):
+# Render buttons and capture selected path
+for i, (label, path) in enumerate(menu.items()):
     if cols[i].button(label):
-        selected_page = page_key
+        selected_path = path
 
-# Content based on selected page key
+# Divider
 st.markdown("---")
-if selected_page == "home":
-    st.header("Welcome to the Home Page")
-elif selected_page == "gallery":
-    st.header("Gallery of Student Creations")
-elif selected_page == "aboutus":
-    st.header("About Us")
-elif selected_page == "contactpage":
-    st.header("Contact Page")
 
+# Content logic based on selected path
+if selected_path == "home":
+    st.header("🏠 Welcome to the Home Page")
+elif selected_path == "gallery":
+    st.header("🖼️ Gallery of Student Creations")
+elif selected_path == "about-us":
+    st.header("ℹ️ About Us")
+elif selected_path == "contact-page":
+    st.header("📞 Contact Page")
+else:
+    st.header("Please select a page above")
 
 
 st.markdown(
