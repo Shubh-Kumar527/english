@@ -40,7 +40,7 @@ st.set_page_config(layout="wide")
 # Navigation menu dictionary
 menu = {
     "Home": "home",
-    "About Authors": "authors",
+    "About Authors": "pages/About_the_authers.py",
     "Students Creation": "students creation",
     "School Magazine": "chf",
     "Game": "yigj",
