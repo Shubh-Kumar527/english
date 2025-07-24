@@ -31,6 +31,8 @@ if os.path.exists(logo_path):
 else:
     st.error("Logo image not found. Please place it at 'assets/logo.png'")
 
+st.markdown("---")
+
 # Navigation bar
 # Set wide layout
 st.set_page_config(layout="wide")
@@ -68,8 +70,7 @@ elif selected_path == "about-us":
     st.header("ℹ️ About Us")
 elif selected_path == "contact-page":
     st.header("📞 Contact Page")
-else:
-    st.header("Please select a page above")
+
 
 
 st.markdown(
