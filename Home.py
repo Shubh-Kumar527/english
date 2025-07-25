@@ -62,8 +62,8 @@ st.markdown("---")
 
 # Content logic based on selected path
 
-if selected_path == "gallery":
-    st.switch_page(menu['About Authors'])
+if selected_path == "pages/About_the_authers.py":
+    st.switch_page("pages/About_the_authers.py")
 elif selected_path == "about-us":
     pass
 elif selected_path == "contact-page":
