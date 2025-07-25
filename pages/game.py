@@ -21,6 +21,9 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+st.markdown("---")
+
+
 # Navigation bar
 # # Navigation menu dictionary
 menu = {
