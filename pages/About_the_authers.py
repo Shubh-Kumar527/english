@@ -45,7 +45,7 @@ for i, (label, path) in enumerate(menu.items()):
 st.markdown("---")
 
 # Content logic based on selected path
-elif selected_path == "Home.py":
+if selected_path == "Home.py":
     st.switch_page("Home.py")
 elif selected_path == "pages/About_the_authers.py":
     st.switch_page("pages/About_the_authers.py")
