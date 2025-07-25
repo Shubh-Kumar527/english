@@ -59,7 +59,7 @@ elif selected_path == "pages/about_us.py":
     st.switch_page("pages/about_us.py")
 
 # Path to student work folder
-student_work_folder = "stories"
+student_work_folder = ""
 
 # Get list of student files
 if os.path.exists(student_work_folder):
