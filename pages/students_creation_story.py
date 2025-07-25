@@ -58,6 +58,7 @@ elif selected_path == "pages/game.py":
 elif selected_path == "pages/about_us.py":
     st.switch_page("pages/about_us.py")
 
+# Set the folder path where student work images are stored
 IMAGE_FOLDER = "stories"
 
 # Load image paths
@@ -84,10 +85,16 @@ with col3:
         if st.session_state.page_index < len(image_files) - 1:
             st.session_state.page_index += 1
 
-# Show current image
+# Show current image (resized)
 if image_files:
     image_path = image_files[st.session_state.page_index]
     img = Image.open(image_path)
-    st.image(img, caption=f"Page {st.session_state.page_index + 1} of {len(image_files)}", use_column_width=True)
+
+    # Resize the image to 70% of original size
+    new_width = int(img.width * 0.7)
+    new_height = int(img.height * 0.7)
+    img = img.resize((new_width, new_height))
+
+    st.image(img, caption=f"Page {st.session_state.page_index + 1} of {len(image_files)}", use_container_width=True)
 else:
     st.warning("No images found in the folder.")
