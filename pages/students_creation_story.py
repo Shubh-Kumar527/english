@@ -58,48 +58,50 @@ elif selected_path == "pages/about_us.py":
     st.switch_page("pages/about_us.py")
 
 # Path to your image folder
+# --- CONFIG ---
 IMAGE_FOLDER = "stories"
 
-# Load image files
-image_files = sorted([
-    os.path.join(IMAGE_FOLDER, f)
-    for f in os.listdir(IMAGE_FOLDER)
-    if f.lower().endswith((".jpg", ".jpeg", ".png", ".gif"))
-])
+# --- LOAD IMAGES ---
+image_files = sorted(
+    f for f in os.listdir(IMAGE_FOLDER)
+    if f.lower().endswith((".png","jpg","jpeg","gif"))
+)
 
-# Initialize index in session state
-if "page_index" not in st.session_state:
-    st.session_state.page_index = 0
+# --- SESSION STATE ---
+if "idx" not in st.session_state:
+    st.session_state.idx = 0
 
-# Navigation buttons (above the image)
-col1, col2, col3 = st.columns([1, 2, 1])
-with col1:
-    if st.button("⬅️ Previous") and st.session_state.page_index > 0:
-        st.session_state.page_index -= 1
-with col3:
-    if st.button("Next ➡️") and st.session_state.page_index < len(image_files) - 1:
-        st.session_state.page_index += 1
+# --- NAVIGATION HANDLERS ---
+def prev_img():
+    if st.session_state.idx > 0:
+        st.session_state.idx -= 1
 
-# Show image in the center
-if image_files:
-    image_path = image_files[st.session_state.page_index]
-    img = Image.open(image_path)
+def next_img():
+    if st.session_state.idx < len(image_files) - 1:
+        st.session_state.idx += 1
 
-    # Resize to fixed width for portrait layout
-    max_width = 350
-    aspect_ratio = img.height / img.width
-    new_height = int(max_width * aspect_ratio)
-    img = img.resize((max_width, new_height))
+# --- LAYOUT: empty side columns + center column ---
+col1, col2, col3 = st.columns([1, 6, 1])
 
-    # Center image
-    st.markdown(
-        f"""
-        <div style='text-align: center;'>
-            <img src='data:image/png;base64,{st.image(img, output_format="PNG").data}' width="{max_width}px">
-            <p>Page {st.session_state.page_index + 1} of {len(image_files)}</p>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
-else:
-    st.warning("No images found in the folder.")
+with col2:
+    if not image_files:
+        st.warning("No images found in 'student_works' folder.")
+    else:
+        # Open & resize
+        img = Image.open(os.path.join(IMAGE_FOLDER, image_files[st.session_state.idx]))
+        max_width = 300
+        ratio = img.height / img.width
+        img = img.resize((max_width, int(max_width * ratio)))
+
+        # Display
+        st.image(img, use_column_width=False)
+        st.caption(f"Page {st.session_state.idx + 1} of {len(image_files)}")
+
+        # Navigation buttons
+        prev_col, _, next_col = st.columns([1,1,1])
+        with prev_col:
+            if st.button("⬅️ Previous"):
+                prev_img()
+        with next_col:
+            if st.button("Next ➡️"):
+                next_img()
