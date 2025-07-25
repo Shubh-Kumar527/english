@@ -57,3 +57,10 @@ elif selected_path == "pages/game.py":
 elif selected_path == "pages/about_us.py":
     st.switch_page("pages/about_us.py")
 
+
+poem, creativity, story = st.columns(3)
+
+with poem:
+    if st.button("see students self composed poem"):
+        st.switch_page(pages/students_creation_poem.py)
+    
