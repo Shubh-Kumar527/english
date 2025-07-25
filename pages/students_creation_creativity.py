@@ -60,7 +60,7 @@ elif selected_path == "pages/about_us.py":
 
 
 # Path to student work folder
-student_work_folder = "poems"
+student_work_folder = "creativity"
 
 # Get list of student files
 if os.path.exists(student_work_folder):
