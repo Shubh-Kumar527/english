@@ -23,10 +23,10 @@ st.markdown("<br>", unsafe_allow_html=True)
 # # Navigation menu dictionary
 menu = {
     "Home": "Home.py",
-    "About Authors": "About_the_authers.py",
-    "Students Creation": "students_creation.py",
-    "Game": "game.py",
-    "About Us": "about-us.py"
+    "About Authors": "pages/About_the_authers.py",
+    "Students Creation": "pages/students_creation.py",
+    "Game": "pages/game.py",
+    "About Us": "pages/about-us.py"
 }
 
 # Create columns for nav buttons
@@ -46,12 +46,12 @@ st.markdown("---")
 # Content logic based on selected path
 if selected_path == "Home.py":
     st.switch_page("Home.py")
-elif selected_path == "students_creation.py":
-        st.switch_page("students_creation.py")
-elif selected_path == "game.py":
-    st.switch_page("game.py")
-elif selected_path == "about-us.py":
-    st.switch_page("about-us.py")
+elif selected_path == "pages/students_creation.py":
+        st.switch_page("pages/students_creation.py")
+elif selected_path == "pages/game.py":
+    st.switch_page("pages/game.py")
+elif selected_path == "pages/about-us.py":
+    st.switch_page("pages/about-us.py")
 
 
 
