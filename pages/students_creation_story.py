@@ -58,44 +58,36 @@ elif selected_path == "pages/game.py":
 elif selected_path == "pages/about_us.py":
     st.switch_page("pages/about_us.py")
 
-# Path to student work folder
-student_work_folder = "stories"
+IMAGE_FOLDER = "stories"
 
-# Get list of student files
-if os.path.exists(student_work_folder):
-    files = os.listdir(student_work_folder)
-    if files:
-        image_files = [f for f in files if os.path.splitext(f)[1].lower() in [".png", ".jpg", ".jpeg"]]
-        text_files = [f for f in files if os.path.splitext(f)[1].lower() in [".txt", ".md"]]
+# Load image paths
+image_files = sorted([
+    os.path.join(IMAGE_FOLDER, file)
+    for file in os.listdir(IMAGE_FOLDER)
+    if file.lower().endswith(('png', 'jpg', 'jpeg', 'gif'))
+])
 
-        combined_files = image_files + text_files
+# Keep track of current index using session state
+if "page_index" not in st.session_state:
+    st.session_state.page_index = 0
 
-        for i in range(0, len(combined_files), 4):
-            row = combined_files[i:i+4]
-            cols = st.columns(len(row))
-            for j, file in enumerate(row):
-                with cols[j]:
-                    name, ext = os.path.splitext(file)
-                    file_path = os.path.join(student_work_folder, file)
-                    if ext.lower() in [".png", ".jpg", ".jpeg"]:
-                        img = Image.open(file_path)
-                        st.image(img, caption=name.replace('_', ' ').title(), width=200)
-                    elif ext.lower() in [".txt", ".md"]:
-                        with open(file_path, "r", encoding="utf-8") as f:
-                            content = f.read()
-                            st.markdown(f"<div style='background-color: #fefefe; padding: 1rem; border-radius: 8px; color: #000;'>"
-                                        f"<h4>{name.replace('_', ' ').title()}</h4>"
-                                        f"<p>{content}</p></div>", unsafe_allow_html=True)
-    else:
-        st.info("No student submissions yet. Please check back soon!")
+# Navigation buttons
+col1, col2, col3 = st.columns([1, 2, 1])
+
+with col1:
+    if st.button("⬅️ Previous"):
+        if st.session_state.page_index > 0:
+            st.session_state.page_index -= 1
+
+with col3:
+    if st.button("Next ➡️"):
+        if st.session_state.page_index < len(image_files) - 1:
+            st.session_state.page_index += 1
+
+# Show current image
+if image_files:
+    image_path = image_files[st.session_state.page_index]
+    img = Image.open(image_path)
+    st.image(img, caption=f"Page {st.session_state.page_index + 1} of {len(image_files)}", use_column_width=True)
 else:
-    st.warning(f"Folder '{student_work_folder}' not found. Please ensure it exists with content.")
-
-# Footer
-st.markdown("---")
-st.markdown(
-    "<div style='text-align: center; color: #000;'>"
-    "&copy; 2025 English Exhibition. Proudly presenting student creativity."
-    "</div>",
-    unsafe_allow_html=True
-)
+    st.warning("No images found in the folder.")
