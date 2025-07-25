@@ -62,5 +62,5 @@ poem, creativity, story = st.columns(3)
 
 with poem:
     if st.button("see students self composed poem"):
-        st.switch_page(pages/students_creation_poem.py)
+        st.switch_page("pages/students_creation_poem.py")
     
