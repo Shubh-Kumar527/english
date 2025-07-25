@@ -42,7 +42,7 @@ menu = {
     "About Authors": "pages/About_the_authers.py",
     "Students Creation": "pages/students_creation.py",
     "School Magazine": "chf",
-    "Game": "yigj",
+    "Game": "pages/guess_the_auther_game.py",
     "About Us": "about-us"
 }
 
@@ -66,8 +66,8 @@ if selected_path == "pages/About_the_authers.py":
     st.switch_page("pages/About_the_authers.py")
 elif selected_path == "pages/students_creation.py":
         st.switch_page("pages/students_creation.py")
-elif selected_path == "contact-page":
-    pass
+elif selected_path == "pages/guess_the_auther_game.py":
+    st.switch_page("pages/guess_the_auther_game.py")
 
 
 
