@@ -74,8 +74,7 @@ elif selected_path == "contact-page":
 st.markdown(
     f"""
     <div style='text-align: center; padding: 2rem;'>
-        <h2 style='color: white; font-style: italic;'>“TO BE OR NOT TO BE , THAT IS THE QUESTION”</h2>
-        <h2 style='color: white; font-style: italic;'>\t-WILLIAM SHAKESPEARE </h2>
+        <h2 style='color: white; font-style: italic;'>“Educate, Enhance, And Evolve: Unlocking The Potential For A Sustainable Tomorrow”</h2>
     </div>
     """,
     unsafe_allow_html=True
