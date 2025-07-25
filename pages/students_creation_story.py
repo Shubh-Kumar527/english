@@ -5,8 +5,7 @@ from PIL import Image
 # Page config
 st.set_page_config(
     page_title="Student Creations",
-    page_icon="🎨",
-    layout="wide"
+    page_icon="🎨"
 )
 
 # Title and Intro
