@@ -17,6 +17,8 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+st.markdown("<br>", unsafe_allow_html=True)
+
 # Navigation bar
 # # Navigation menu dictionary
 menu = {
