@@ -85,16 +85,17 @@ with col3:
         if st.session_state.page_index < len(image_files) - 1:
             st.session_state.page_index += 1
 
-# Show current image (resized)
+# Show current image (portrait-sized, manually resized)
 if image_files:
     image_path = image_files[st.session_state.page_index]
     img = Image.open(image_path)
 
-    # Resize the image to 70% of original size
-    new_width = int(img.width * 0.7)
-    new_height = int(img.height * 0.7)
-    img = img.resize((new_width, new_height))
+    # Resize portrait image to a fixed width while keeping aspect ratio
+    max_width = 400  # pixels (adjust as needed)
+    aspect_ratio = img.height / img.width
+    new_height = int(max_width * aspect_ratio)
+    img = img.resize((max_width, new_height))
 
-    st.image(img, caption=f"Page {st.session_state.page_index + 1} of {len(image_files)}", use_container_width=True)
+    st.image(img, caption=f"Page {st.session_state.page_index + 1} of {len(image_files)}", use_container_width=False)
 else:
     st.warning("No images found in the folder.")
