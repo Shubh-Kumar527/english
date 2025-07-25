@@ -40,7 +40,7 @@ st.set_page_config(layout="wide")
 # Navigation menu dictionary
 menu = {
     "About Authors": "pages/About_the_authers.py",
-    "Students Creation": "students creation",
+    "Students Creation": "pages/students_creation.py",
     "School Magazine": "chf",
     "Game": "yigj",
     "About Us": "about-us"
@@ -64,8 +64,8 @@ st.markdown("---")
 
 if selected_path == "pages/About_the_authers.py":
     st.switch_page("pages/About_the_authers.py")
-elif selected_path == "about-us":
-    pass
+elif selected_path == "pages/students_creation.py":
+        st.switch_page("pages/students_creation.py")
 elif selected_path == "contact-page":
     pass
 
