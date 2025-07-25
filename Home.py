@@ -65,8 +65,8 @@ if selected_path == "pages/About_the_authers.py":
     st.switch_page("pages/About_the_authers.py")
 elif selected_path == "pages/students_creation.py":
         st.switch_page("pages/students_creation.py")
-elif selected_path == "pages/guess_the_auther_game.py":
-    st.switch_page("pages/guess_the_auther_game.py")
+elif selected_path == "pages/game.py":
+    st.switch_page("pages/game.py")
 elif selected_path == "pages/about_us.py":
     st.switch_page("pages/about_us.py")
 
