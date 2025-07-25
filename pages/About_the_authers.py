@@ -19,14 +19,14 @@ st.markdown(
 
 # Navigation bar
 # # Navigation menu dictionary
-# menu = {
-#     "Home": "Home.py"
-#     "About Authors": "pages/About_the_authers.py",
-#     "Students Creation": "pages/students_creation.py",
-#     "School Magazine": "chf",
-#     "Game": "yigj",
-#     "About Us": "about-us"
-# }
+menu = {
+    "Home": "Home.py"
+    "About Authors": "pages/About_the_authers.py",
+    "Students Creation": "pages/students_creation.py",
+    "School Magazine": "chf",
+    "Game": "yigj",
+    "About Us": "about-us"
+}
 
 # # Create columns for nav buttons
 # cols = st.columns(len(menu))
