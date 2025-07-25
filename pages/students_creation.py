@@ -67,5 +67,5 @@ with story:
     if st.button("see students self composed stories"):
         st.switch_page("pages/students_creation_story.py")
 with creativity:
-    if st.button("see students self composed stories"):
+    if st.button("see students creativity"):
         st.switch_page("pages/students_creation_creativity.py")
