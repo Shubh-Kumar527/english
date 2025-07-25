@@ -17,6 +17,42 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+# Navigation bar
+# Navigation menu dictionary
+menu = {
+    "Home": "Home.py"
+    "About Authors": "pages/About_the_authers.py",
+    "Students Creation": "pages/students_creation.py",
+    "School Magazine": "chf",
+    "Game": "yigj",
+    "About Us": "about-us"
+}
+
+# Create columns for nav buttons
+cols = st.columns(len(menu))
+
+# Track selected path
+selected_path = None
+
+# Render buttons and capture selected path
+for i, (label, path) in enumerate(menu.items()):
+    if cols[i].button(label):
+        selected_path = path
+
+# Divider
+st.markdown("---")
+
+# Content logic based on selected path
+
+if selected_path == "pages/About_the_authers.py":
+    st.switch_page("pages/About_the_authers.py")
+elif selected_path == "pages/students_creation.py":
+        st.switch_page("pages/students_creation.py")
+elif selected_path == "contact-page":
+    pass
+
+
+
 # Author data: name, filename, and bio
 authors = [
     {
