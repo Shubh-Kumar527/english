@@ -72,30 +72,33 @@ image_files = sorted([
 if "page_index" not in st.session_state:
     st.session_state.page_index = 0
 
-# Navigation buttons
-col1, col2, col3 = st.columns([1, 2, 1])
+# Create 3 columns: left (button), center (image), right (button)
+col1, col2, col3 = st.columns([1, 4, 1])
 
+# Previous button
 with col1:
-    if st.button("⬅️ Previous"):
+    if st.button("⬅️", use_container_width=True):
         if st.session_state.page_index > 0:
             st.session_state.page_index -= 1
 
+# Center image
+with col2:
+    if image_files:
+        image_path = image_files[st.session_state.page_index]
+        img = Image.open(image_path)
+
+        # Resize portrait image to a fixed width while keeping aspect ratio
+        max_width = 400  # Adjust width as needed
+        aspect_ratio = img.height / img.width
+        new_height = int(max_width * aspect_ratio)
+        img = img.resize((max_width, new_height))
+
+        st.image(img, caption=f"Page {st.session_state.page_index + 1} of {len(image_files)}", use_container_width=False)
+    else:
+        st.warning("No images found in the folder.")
+
+# Next button
 with col3:
-    if st.button("Next ➡️"):
+    if st.button("➡️", use_container_width=True):
         if st.session_state.page_index < len(image_files) - 1:
             st.session_state.page_index += 1
-
-# Show current image (portrait-sized, manually resized)
-if image_files:
-    image_path = image_files[st.session_state.page_index]
-    img = Image.open(image_path)
-
-    # Resize portrait image to a fixed width while keeping aspect ratio
-    max_width = 400  # pixels (adjust as needed)
-    aspect_ratio = img.height / img.width
-    new_height = int(max_width * aspect_ratio)
-    img = img.resize((max_width, new_height))
-
-    st.image(img, caption=f"Page {st.session_state.page_index + 1} of {len(image_files)}", use_container_width=False)
-else:
-    st.warning("No images found in the folder.")
