@@ -65,4 +65,4 @@ with poem:
         st.switch_page("pages/students_creation_poem.py")
 with story:
     if st.button("see students self composed stories"):
-        st.switch_page("pages/students_creation_stories.py")
+        st.switch_page("pages/students_creation_story.py")
