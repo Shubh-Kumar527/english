@@ -60,43 +60,51 @@ elif selected_path == "pages/about_us.py":
 
 
 # Path to student work folder
-student_work_folder = "creativity"
+# Path to your image folder
+# --- CONFIG ---
+IMAGE_FOLDER = "creativity"
 
-# Get list of student files
-if os.path.exists(student_work_folder):
-    files = os.listdir(student_work_folder)
-    if files:
-        image_files = [f for f in files if os.path.splitext(f)[1].lower() in [".png", ".jpg", ".jpeg"]]
-        text_files = [f for f in files if os.path.splitext(f)[1].lower() in [".txt", ".md"]]
-
-        combined_files = image_files + text_files
-
-        for i in range(0, len(combined_files), 4):
-            row = combined_files[i:i+4]
-            cols = st.columns(len(row))
-            for j, file in enumerate(row):
-                with cols[j]:
-                    name, ext = os.path.splitext(file)
-                    file_path = os.path.join(student_work_folder, file)
-                    if ext.lower() in [".png", ".jpg", ".jpeg"]:
-                        img = Image.open(file_path)
-                        st.image(img, caption=name.replace('_', ' ').title(), width=200)
-                    elif ext.lower() in [".txt", ".md"]:
-                        with open(file_path, "r", encoding="utf-8") as f:
-                            content = f.read()
-                            st.markdown(f"<div style='background-color: #fefefe; padding: 1rem; border-radius: 8px; color: #000;'>"
-                                        f"<h4>{name.replace('_', ' ').title()}</h4>"
-                                        f"<p>{content}</p></div>", unsafe_allow_html=True)
-    else:
-        st.info("No student submissions yet. Please check back soon!")
-else:
-    st.warning(f"Folder '{student_work_folder}' not found. Please ensure it exists with content.")
-
-# Footer
-st.markdown("---")
-st.markdown(
-    "<div style='text-align: center; color: #000;'>"
-    "&copy; 2025 English Exhibition. Proudly presenting student creativity."
-    "</div>",
-    unsafe_allow_html=True
+# --- LOAD IMAGES ---
+image_files = sorted(
+    f for f in os.listdir(IMAGE_FOLDER)
+    if f.lower().endswith((".png","jpg","jpeg","gif"))
 )
+
+# --- SESSION STATE ---
+if "idx" not in st.session_state:
+    st.session_state.idx = 0
+
+# --- NAVIGATION HANDLERS ---
+def prev_img():
+    if st.session_state.idx > 0:
+        st.session_state.idx -= 1
+
+def next_img():
+    if st.session_state.idx < len(image_files) - 1:
+        st.session_state.idx += 1
+
+# --- LAYOUT: empty side columns + center column ---
+col1, col2, col3 = st.columns([1, 6, 1])
+
+with col2:
+    if not image_files:
+        st.warning("No images found in 'student_works' folder.")
+    else:
+        # Open & resize
+        img = Image.open(os.path.join(IMAGE_FOLDER, image_files[st.session_state.idx]))
+        max_width = 300
+        ratio = img.height / img.width
+        img = img.resize((max_width, int(max_width * ratio)))
+
+        # Display
+        st.image(img, use_container_width=False)
+        st.caption(f"Page {st.session_state.idx + 1} of {len(image_files)}")
+
+        # Navigation buttons
+        prev_col, _, next_col = st.columns([1,1,1])
+        with prev_col:
+            if st.button("⬅️ Previous"):
+                prev_img()
+        with next_col:
+            if st.button("Next ➡️"):
+                next_img()
