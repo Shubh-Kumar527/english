@@ -57,3 +57,26 @@ elif selected_path == "pages/students_creation.py":
     st.switch_page("pages/students_creation.py")
 elif selected_path == "pages/about_us.py":
     st.switch_page("pages/about_us.py")
+
+g1, g2, g3 = st.columns(3)
+
+# Load the image
+image = Image.open('images/creativity.jpg')
+
+image1 = Image.open('images/poems.jpg')
+
+image2 = Image.open('images/story.jpg')
+
+
+with g1:
+    st.image(image1, caption='My Image', use_container_width=True)
+    if st.button("game1"):
+        st.switch_page("pages/game1.py")
+with g2:
+    st.image(image2, caption='My Image', use_container_width=True)
+    if st.button("game2"):
+        st.switch_page("pages/students_creation_story.py")
+with g3:
+    st.image(image, caption='My Image', use_container_width=True)
+    if st.button("game3"):
+        st.switch_page("pages/students_creation_creativity.py")
