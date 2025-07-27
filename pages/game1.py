@@ -11,7 +11,7 @@ st.set_page_config(
 st.markdown(
     """
     <div style='text-align: center; padding: 1rem; background-color: #e9f5ff; border-radius: 10px;'>
-        <h1 style='color: #2c3e50;'>🎨 Student Creations</h1>
+        <h1 style='color: #2c3e50;'>🎨 Game 1</h1>
         <p style='color: #34495e;'>Explore original work made by our talented students.</p>
     </div>
     """,
