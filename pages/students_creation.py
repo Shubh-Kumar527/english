@@ -63,15 +63,20 @@ poem, creativity, story = st.columns(3)
 # Load the image
 image = Image.open('images/creativity.jpg')
 
+image1 = Image.open('images/poems.jpg')
+
+image2 = Image.open('images/story.jpg')
 
 
 with poem:
-    st.image(image, caption='My Image', use_column_width=True)
+    st.image(image1, caption='My Image', use_container_width=True)
     if st.button("see students self composed poem"):
         st.switch_page("pages/students_creation_poem.py")
 with story:
+    st.image(image2, caption='My Image', use_container_width=True)
     if st.button("see students self composed stories"):
         st.switch_page("pages/students_creation_story.py")
 with creativity:
+    st.image(image, caption='My Image', use_container_width=True)
     if st.button("see students creativity"):
         st.switch_page("pages/students_creation_creativity.py")
