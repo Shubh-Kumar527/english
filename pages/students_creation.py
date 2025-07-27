@@ -60,7 +60,13 @@ elif selected_path == "pages/about_us.py":
 
 poem, creativity, story = st.columns(3)
 
+# Load the image
+image = Image.open('pages/creativity')
+
+
+
 with poem:
+    st.image(image, caption='My Image', use_column_width=True)
     if st.button("see students self composed poem"):
         st.switch_page("pages/students_creation_poem.py")
 with story:
