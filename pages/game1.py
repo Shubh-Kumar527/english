@@ -47,6 +47,8 @@ st.markdown("---")
 # Content logic based on selected path
 if selected_path == "Home.py":
     st.switch_page("Home.py")
+elif selected_path == "pages/students_creation.py":
+        st.switch_page("pages/students_creation.py")
 elif selected_path == "pages/About_the_authers.py":
         st.switch_page("pages/About_the_authers.py")
 elif selected_path == "pages/game.py":
