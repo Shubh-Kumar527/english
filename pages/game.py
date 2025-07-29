@@ -74,6 +74,6 @@ with g1:
         st.switch_page("pages/game1.py")
 with g2:
     st.image(image2, caption='My Image', use_container_width=True)
-    if st.button("game2"):
+    if st.button("Literary Exploration "):
         st.switch_page("pages/guess_the_auther_game.py")
 
