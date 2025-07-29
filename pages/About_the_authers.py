@@ -99,7 +99,7 @@ authors = [
     },
     {
         "name": "Virginia Woolf",
-        "file": "viriginia_woolf.jpg",
+        "file": "virginia_woolf.jpg",
         "bio": "Virginia Woolf (1882–1941) was a British modernist writer and a key figure in feminist literature. Known for novels like Mrs Dalloway, To the Lighthouse, and Orlando, she pioneered stream-of-consciousness writing, capturing the inner thoughts of her characters. Woolf’s essays, especially A Room of One’s Own, argued for women’s intellectual freedom and the need for financial independence. She was a central figure in the Bloomsbury Group, a circle of influential artists and thinkers. Her innovative narrative techniques and exploration of gender, time, and identity have left a lasting legacy in literature and feminist thought."
     },
     {
