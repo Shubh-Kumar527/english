@@ -61,9 +61,9 @@ elif selected_path == "pages/about_us.py":
 g1, g2 = st.columns(2)
 
 # Load the image
-image = Image.open('images/creativity.jpg')
+image1 = Image.open('images/creativity.jpg')
 
-image1 = Image.open('images/poems.jpg')
+image2 = Image.open('images/poems.jpg')
 
 
 
