@@ -96,12 +96,12 @@ authors = [
         "name": "George Orwell",
         "file": "george_orwell.jpg",
         "bio": "George Orwell (1903–1950), born Eric Arthur Blair, was an English novelist, journalist, and critic. He is best known for his dystopian novels Animal Farm and Nineteen Eighty-Four, which explore themes of power, control, and totalitarianism. Orwell was a strong advocate for truth and freedom, drawing on his experiences in war and politics. His writing is clear, direct, and deeply critical of oppressive systems. Terms like “Big Brother” and “Orwellian” come from his works and are widely used today. Orwell’s sharp political insights and concern for justice make his work especially relevant in the modern world."
-    }
+    },
     {
         "name": "Virginia Woolf",
         "file": "viriginia_woolf.jpg",
         "bio": "Virginia Woolf (1882–1941) was a British modernist writer and a key figure in feminist literature. Known for novels like Mrs Dalloway, To the Lighthouse, and Orlando, she pioneered stream-of-consciousness writing, capturing the inner thoughts of her characters. Woolf’s essays, especially A Room of One’s Own, argued for women’s intellectual freedom and the need for financial independence. She was a central figure in the Bloomsbury Group, a circle of influential artists and thinkers. Her innovative narrative techniques and exploration of gender, time, and identity have left a lasting legacy in literature and feminist thought."
-    }
+    },
     {
         "name": "Sudha Murty",
         "file": "sudha_murty.jpg",
