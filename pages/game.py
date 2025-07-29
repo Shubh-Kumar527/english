@@ -75,5 +75,5 @@ with g1:
 with g2:
     st.image(image2, caption='My Image', use_container_width=True)
     if st.button("game2"):
-        st.switch_page("pages/guess_the_authers_game.py")
+        st.switch_page("pages/guess_the_auther_game.py")
 
