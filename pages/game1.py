@@ -157,7 +157,7 @@ def complete_quiz():
 # -------------------------------
 # Main UI
 # -------------------------------
-st.title("📚 Literary Quiz – One Question at a Time")
+st.title("📚 Literary Exploration ")
 
 q_index = st.session_state.current_question
 q = questions[q_index]
