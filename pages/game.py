@@ -70,7 +70,7 @@ image2 = Image.open('images/img_12.jpg')
 
 with g1:
     st.image(image1, caption='My Image', use_container_width=True)
-    if st.button("game1"):
+    if st.button("Spotlight On Success"):
         st.switch_page("pages/game1.py")
 with g2:
     st.image(image2, caption='My Image', use_container_width=True)
