@@ -24,7 +24,7 @@ st.markdown("---")
 # # Navigation menu dictionary
 menu = {
     "Home": "Home.py",
-    "About Authors": "pages/About_the_authers.py",
+    "Author Avenue": "pages/About_the_authers.py",
     "Students Creation": "pages/students_creation.py",
     "Brain Battles": "pages/game.py",
     "About Us": "pages/about_us.py"
