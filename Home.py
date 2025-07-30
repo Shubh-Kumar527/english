@@ -39,7 +39,7 @@ st.set_page_config(layout="wide")
 
 # Navigation menu dictionary
 menu = {
-    "About Authors": "pages/About_the_authers.py",
+    "Author Avenue": "pages/About_the_authers.py",
     "Students Creation": "pages/students_creation.py",
     "Brain Battles": "pages/game.py",
     "About Us": "pages/about_us.py"
