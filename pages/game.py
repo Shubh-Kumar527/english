@@ -30,7 +30,7 @@ menu = {
     "Home": "Home.py",
     "About Authors": "pages/About_the_authers.py",
     "Students Creation": "pages/students_creation.py",
-    "Game": "pages/game.py",
+    "Brain Battles": "pages/game.py",
     "About Us": "pages/about_us.py"
 }
 
