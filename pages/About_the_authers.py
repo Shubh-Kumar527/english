@@ -24,7 +24,7 @@ st.markdown("<br>", unsafe_allow_html=True)
 menu = {
     "Home": "Home.py",
     "Author Avenue": "pages/About_the_authers.py",
-    "Students Creation": "pages/students_creation.py",
+    "Bright Minds, Bold Words": "pages/students_creation.py",
     "Brain Battles": "pages/game.py",
     "About Us": "pages/about_us.py"
 }
