@@ -4,27 +4,34 @@ from PIL import Image
 import io
 import os
 
+# ---------- CONFIG ----------
+st.set_page_config(layout="centered")
+st.title("📖 PDF Flip Book Viewer (Local File)")
 
+# 📌 Change this to set the width of the image (in pixels)
+display_width = 700
 
-# 🔧 Set the full path to your local PDF here
-pdf_path = "1.pdf"
+# 🔧 Set the full path to your local PDF file
+pdf_path = "1.pdf"  # <- CHANGE THIS
 
-# Check if file exists
+# ---------- LOAD AND DISPLAY ----------
 if not os.path.exists(pdf_path):
     st.error(f"File not found at:\n`{pdf_path}`")
 else:
-    # Open the PDF
     doc = fitz.open(pdf_path)
 
-    # Setup session state for page tracking
+    # Initialize page number if not already set
     if "page_number" not in st.session_state:
         st.session_state.page_number = 0
 
-    # Display current page
+    # Load and render the current page
     page = doc[st.session_state.page_number]
-    pix = page.get_pixmap(matrix=fitz.Matrix(2, 2))  # 2x zoom for clarity
+    zoom = 2  # You can also make this a variable if you want to control zoom level
+    pix = page.get_pixmap(matrix=fitz.Matrix(zoom, zoom))
     img = Image.open(io.BytesIO(pix.tobytes("png")))
-    st.image(img, use_column_width=True)
+
+    # Display the image with controlled width
+    st.image(img, width=display_width)
 
     # Navigation buttons
     col1, col2, col3 = st.columns(3)
@@ -35,5 +42,5 @@ else:
         if st.button("Next ➡️") and st.session_state.page_number < len(doc) - 1:
             st.session_state.page_number += 1
 
-    # Page number display
+    # Page info
     st.markdown(f"**Page {st.session_state.page_number + 1} of {len(doc)}**")
