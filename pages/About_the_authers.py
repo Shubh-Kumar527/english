@@ -107,6 +107,11 @@ authors = [
         "file": "sudha_murty.jpg",
         "bio": "Sudha Murty is an Indian author, social worker, and chairperson of the Infosys Foundation. Writing in both English and Kannada, her stories reflect values like honesty, simplicity, and kindness. Her popular books—Wise and Otherwise, Dollar Bahu, and The Old Man and His God—draw from real-life experiences and Indian culture. Murty’s writing is accessible and inspirational, appealing to readers of all ages. She is also known for her philanthropic work in education, healthcare, and rural development. In 2024, she was nominated to the Rajya Sabha. Sudha Murty’s life and work continue to influence and uplift millions."
     }
+    {
+        "name": "",
+        "file": "lady_1.jpg",
+        "bio": ""
+    }
 ]
 
 image_folder = "images"
