@@ -59,3 +59,11 @@ elif selected_path == "pages/game.py":
     st.switch_page("pages/game.py")
 elif selected_path == "pages/about_us.py":
     st.switch_page("pages/about_us.py")
+
+
+shubh = Image.open("path/to/image.jpg")
+afeefa = Image.open("path/to/image.jpg")
+
+st.image(image, caption="Optional caption", use_column_width=True)
+st.image(image, caption="Optional caption", use_column_width=True)
+
