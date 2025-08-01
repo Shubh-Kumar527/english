@@ -113,9 +113,9 @@ authors = [
         "bio": "Chimamanda Ngozi Adichie is a Nigerian author known for her powerful novels that explore identity, feminism, colonialism, and postcolonial Nigeria. Her acclaimed books include Half of a Yellow Sun, Americanah, and Purple Hibiscus. Adichie’s writing blends personal narratives with political and cultural critique, giving voice to African perspectives often underrepresented in global literature. Her TED Talk “We Should All Be Feminists” gained worldwide recognition and has been published as an influential essay. Through her storytelling, Adichie challenges stereotypes and promotes diverse narratives. She is a leading voice in contemporary literature and feminist thought."
     },
     {
-        "name": "",
+        "name": "Franz Kafka",
         "file": "man_1.jpg",
-        "bio": ""
+        "bio": "Franz Kafka (1883–1924) was a German-speaking Bohemian writer whose surreal and nightmarish works explore alienation, bureaucracy, and existential anxiety. Best known for The Metamorphosis, The Trial, and The Castle, Kafka’s protagonists often face incomprehensible systems and absurd realities. His writing style gave rise to the term "Kafkaesque" to describe bizarre, oppressive situations. Though only a few works were published during his lifetime, Kafka’s influence has grown posthumously, making him one of the most significant figures in 20th-century literature. His philosophical depth and exploration of human struggle continue to resonate with readers and scholars alike."
     }
 ]
 
