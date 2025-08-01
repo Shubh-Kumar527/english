@@ -108,9 +108,9 @@ authors = [
         "bio": "Sudha Murty is an Indian author, social worker, and chairperson of the Infosys Foundation. Writing in both English and Kannada, her stories reflect values like honesty, simplicity, and kindness. Her popular books—Wise and Otherwise, Dollar Bahu, and The Old Man and His God—draw from real-life experiences and Indian culture. Murty’s writing is accessible and inspirational, appealing to readers of all ages. She is also known for her philanthropic work in education, healthcare, and rural development. In 2024, she was nominated to the Rajya Sabha. Sudha Murty’s life and work continue to influence and uplift millions."
     },
     {
-        "name": "",
+        "name": "Chimamanda Ngozi Adichie",
         "file": "lady_1.jpg",
-        "bio": ""
+        "bio": "Chimamanda Ngozi Adichie is a Nigerian author known for her powerful novels that explore identity, feminism, colonialism, and postcolonial Nigeria. Her acclaimed books include Half of a Yellow Sun, Americanah, and Purple Hibiscus. Adichie’s writing blends personal narratives with political and cultural critique, giving voice to African perspectives often underrepresented in global literature. Her TED Talk “We Should All Be Feminists” gained worldwide recognition and has been published as an influential essay. Through her storytelling, Adichie challenges stereotypes and promotes diverse narratives. She is a leading voice in contemporary literature and feminist thought."
     },
     {
         "name": "",
