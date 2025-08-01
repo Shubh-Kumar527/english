@@ -6,7 +6,15 @@ import os
 
 # ---------- CONFIG ----------
 st.set_page_config(layout="centered")
-st.title("📖 PDF Flip Book Viewer (Local File)")
+st.markdown(
+    "<div style='text-align: center; padding: 1rem; background-color: #f9f9f9; border-radius: 10px;'>"
+    "<h1 style='color: #333;'>📝 Meet the Authors</h1>"
+    "<p style='color: #666;'>Get to know the brilliant minds behind the words.</p>"
+    "</div>",
+    unsafe_allow_html=True
+)
+
+st.markdown("<br>", unsafe_allow_html=True)
 
 # 📌 Change this to set the width of the image (in pixels)
 display_width = 700
