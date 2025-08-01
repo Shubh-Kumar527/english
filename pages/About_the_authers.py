@@ -115,7 +115,7 @@ authors = [
     {
         "name": "Franz Kafka",
         "file": "man_1.jpg",
-        "bio": "Franz Kafka (1883–1924) was a German-speaking Bohemian writer whose surreal and nightmarish works explore alienation, bureaucracy, and existential anxiety. Best known for The Metamorphosis, The Trial, and The Castle, Kafka’s protagonists often face incomprehensible systems and absurd realities. His writing style gave rise to the term "Kafkaesque" to describe bizarre, oppressive situations. Though only a few works were published during his lifetime, Kafka’s influence has grown posthumously, making him one of the most significant figures in 20th-century literature. His philosophical depth and exploration of human struggle continue to resonate with readers and scholars alike."
+        "bio": 'Franz Kafka (1883–1924) was a German-speaking Bohemian writer whose surreal and nightmarish works explore alienation, bureaucracy, and existential anxiety. Best known for The Metamorphosis, The Trial, and The Castle, Kafka’s protagonists often face incomprehensible systems and absurd realities. His writing style gave rise to the term "Kafkaesque" to describe bizarre, oppressive situations. Though only a few works were published during his lifetime, Kafka’s influence has grown posthumously, making him one of the most significant figures in 20th-century literature. His philosophical depth and exploration of human struggle continue to resonate with readers and scholars alike.'
     }
 ]
 
