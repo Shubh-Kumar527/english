@@ -111,6 +111,11 @@ authors = [
         "name": "",
         "file": "lady_1.jpg",
         "bio": ""
+    },
+    {
+        "name": "",
+        "file": "man_1.jpg",
+        "bio": ""
     }
 ]
 
