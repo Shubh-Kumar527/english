@@ -72,7 +72,14 @@ shubh = Image.open("images/shubh3.jpg")
 d1, d2 = st.columns(2)
 
 with d1:
-    st.image(afeefa, caption="Optional caption", use_container_width=True)
+
+
+    desired_height = 300
+    aspect_ratio = afeefa.width / afeefa.height
+    new_width = int(desired_height * aspect_ratio)
+    
+    resized_img_afeefa = afeefa.resize((new_width, desired_height))
+    st.image(resized_img)
     st.write('Name : Afeefa Ansari')
     st.write('class : IX A')
     
