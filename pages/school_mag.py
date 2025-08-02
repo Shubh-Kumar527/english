@@ -39,6 +39,8 @@ for i, (label, path) in enumerate(menu.items()):
 # Divider
 st.markdown("---")
 
+st.markdown("<br>", unsafe_allow_html=True)
+
 # Content logic based on selected path
 if selected_path == "Home.py":
     st.switch_page("Home.py")
