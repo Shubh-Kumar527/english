@@ -79,7 +79,7 @@ with d1:
     new_width = int(desired_height * aspect_ratio)
     
     resized_img_afeefa = afeefa.resize((new_width, desired_height))
-    st.image(resized_img)
+    st.image(resized_img_afeefa)
     st.write('Name : Afeefa Ansari')
     st.write('class : IX A')
     
