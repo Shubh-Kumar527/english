@@ -69,6 +69,6 @@ afeefa = Image.open("images/afeefa.jpg")
 
 d1, d2 = st.columns(2)
 with d1:
-    st.image(afeefa, caption="Optional caption", use_column_width=True)
+    st.image(afeefa, caption="Optional caption", use_container_width=True)
     st.write('description')
 
