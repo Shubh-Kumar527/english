@@ -31,7 +31,7 @@ menu = {
     "Bright Minds, Bold Words": "pages/students_creation.py",
     "Brain Battles": "pages/game.py",
     "School magazine" : "pages/school_mag.py",
-    "About Us": "pages/about_us.py"
+    "Know About The Developers": "pages/about_us.py"
 }
 
 # Create columns for nav buttons
