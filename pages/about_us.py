@@ -63,12 +63,22 @@ elif selected_path == "pages/about_us.py":
 
 # shubh = Image.open("path/to/image.jpg")
 afeefa = Image.open("images/afeefa.jpg")
+shubh = Image.open("images/shubh3.jpg")
+
 
 # st.image(image, caption="Optional caption", use_column_width=True)
 # st.image(image, caption="Optional caption", use_column_width=True)
 
 d1, d2 = st.columns(2)
+
 with d1:
     st.image(afeefa, caption="Optional caption", use_container_width=True)
-    st.write('description')
+    st.write('Name : Afeefa Ansari')
+    st.write('class : IX A')
+    
+
+with d2:
+    st.image(shubh, caption="Optional caption", use_container_width=True)
+    st.write('Name : Shubh Kumar')
+    st.write('class : IX A')
 
