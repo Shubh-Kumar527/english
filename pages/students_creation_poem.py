@@ -58,6 +58,8 @@ elif selected_path == "pages/game.py":
     st.switch_page("pages/game.py")
 elif selected_path == "pages/about_us.py":
     st.switch_page("pages/about_us.py")
+elif selected_path == "pages/school_mag.py":
+    st.switch_page("pages/school_mag.py")
 
 
 # Path to your image folder
