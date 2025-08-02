@@ -95,7 +95,7 @@ with col2:
         img = img.resize((max_width, int(max_width * ratio)))
 
         # Display
-        st.image(img, use_container_width=False)
+        st.image(img, width=500)
         st.caption(f"Page {st.session_state.idx + 1} of {len(image_files)}")
 
         # Navigation buttons
