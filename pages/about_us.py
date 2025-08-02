@@ -62,7 +62,7 @@ elif selected_path == "pages/about_us.py":
 
 
 # shubh = Image.open("path/to/image.jpg")
-afeefa = Image.open("path/to/image.jpg")
+afeefa = Image.open("images/afeefa.jpg")
 
 # st.image(image, caption="Optional caption", use_column_width=True)
 # st.image(image, caption="Optional caption", use_column_width=True)
