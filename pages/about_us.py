@@ -61,9 +61,14 @@ elif selected_path == "pages/about_us.py":
     st.switch_page("pages/about_us.py")
 
 
-shubh = Image.open("path/to/image.jpg")
+# shubh = Image.open("path/to/image.jpg")
 afeefa = Image.open("path/to/image.jpg")
 
+# st.image(image, caption="Optional caption", use_column_width=True)
 st.image(image, caption="Optional caption", use_column_width=True)
-st.image(image, caption="Optional caption", use_column_width=True)
+
+d1, d2 = st.column(2)
+with d1:
+    st.image(afeefa, caption="Optional caption", use_column_width=True)
+    st.write('description')
 
