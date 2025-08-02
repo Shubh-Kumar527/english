@@ -5,7 +5,7 @@ import io
 import os
 
 # ---------- CONFIG ----------
-st.set_page_config(layout="centered")
+st.set_page_config(layout="width")
 st.markdown(
     "<div style='text-align: center; padding: 1rem; background-color: #f9f9f9; border-radius: 10px;'>"
     "<h1 style='color: #333;'>📝 Meet the Authors</h1>"
