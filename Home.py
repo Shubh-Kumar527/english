@@ -43,7 +43,7 @@ menu = {
     "Bright Minds, Bold Words": "pages/students_creation.py",
     "Brain Battles": "pages/game.py",
     "School magazine" : "pages/school_mag.py",
-    "About Us": "pages/about_us.py"
+    "Know About The Developers": "pages/about_us.py"
 
 }
 
@@ -92,3 +92,4 @@ if os.path.exists(image_path):
     st.image(image_path, use_container_width=True)
 else:
     st.warning("Background image placeholder not found. Please place it at 'assets/main_visual.jpg'")
+
