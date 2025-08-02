@@ -72,8 +72,6 @@ shubh = Image.open("images/shubh3.jpg")
 d1, d2 = st.columns(2)
 
 with d1:
-
-
     desired_height = 300
     aspect_ratio = afeefa.width / afeefa.height
     new_width = int(desired_height * aspect_ratio)
@@ -85,7 +83,12 @@ with d1:
     
 
 with d2:
-    st.image(shubh, caption="Optional caption", use_container_width=True)
+    desired_height = 300
+    aspect_ratio = shubh.width / shubh.height
+    new_width = int(desired_height * aspect_ratio)
+    
+    resized_img_shubh = shubh.resize((new_width, desired_height))
+    st.image(resized_img_shubh)
     st.write('Name : Shubh Kumar')
     st.write('class : IX A')
 
