@@ -58,6 +58,8 @@ elif selected_path == "pages/students_creation.py":
     st.switch_page("pages/students_creation.py")
 elif selected_path == "pages/about_us.py":
     st.switch_page("pages/about_us.py")
+elif selected_path == "pages/school_mag.py":
+    st.switch_page("pages/school_mag.py")
 
 g1, g2 = st.columns(2)
 
